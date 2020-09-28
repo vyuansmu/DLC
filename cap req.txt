@@ -1,0 +1,17 @@
+Wood: 3,550 
+
+Stone: 1,330 
+
+Charcoal: 4,345 
+
+Metal Ores: 1,990 
+
+Metal Bars: 1,990 
+
+Precious Ores: 2,335 
+
+Precious Bars: 2,355 
+
+Cloth: 4,045 
+
+Rations: 3,860 

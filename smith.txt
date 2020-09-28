@@ -1,0 +1,4 @@
+ 4+ hard
+ 3  medium
+ 1  soft
+ 2 soft/care

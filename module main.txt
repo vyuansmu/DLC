@@ -1,0 +1,21 @@
+module main;
+reg cl,ck; // inputs
+ wire qa,qb; // outputs
+ parameter high=1'b1; // logic 1
+	dff_7474 
+	U1A(qb,cl,high,ck,qa,qabar),
+ 	U1B(AB,cl,high,ck,qb,qbbar),
+	U2A(qcbar,cl,high,ck,qc,qcbar);
+	and #(17.5,12) U3A(AA,qc,qb);
+	or  #(10,14) U4A(AB,AA,qabar);
+ initial ck=0;
+ always #100 ck=~ck; 
+initial 
+begin
+	$monitor($time,,"cl=%b ck=%b qa=%b qb=%b qc=%b", cl,ck,qa,qb,qc); 
+	#000 cl=1;
+	#050 cl=0;
+	#200 cl=1;
+	#1200 $finish;
+ end
+endmodule 

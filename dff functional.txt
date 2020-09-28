@@ -1,0 +1,15 @@
+module dff_functional(d,cl,pr,ck,q,qbar);
+input d,cl,pr,ck; // inputs
+output q,qbar; // outputs
+parameter delay_rise=14; // rise time delay
+parameter delay_fall=20; // fall time delay
+	nand #(0) (qq,pr,nand2,qqbar),
+	(qqbar,qq,cl,nand3),
+	(nand1,pr,nand4,nand2),
+	(nand2,nand1,cl,ck),
+	(nand3,nand2,ck,nand4),
+	(nand4,nand3,cl,d);
+	buf #(delay_rise,delay_fall)
+	(q,qq),
+	(qbar,qqbar);
+endmodule
